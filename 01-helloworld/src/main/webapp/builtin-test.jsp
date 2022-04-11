@@ -8,11 +8,13 @@
 </head>
 <body>
 	<jsp:include page="myheader.html" />
-	Convert a string to uppercase: <%= new String("Hello World").toUpperCase()   %>
-	<br/></br/>
-	25 multiplied by 4 = <%= 25*4 %>
-	<br></br>
-	Is 75 less than 70 ? <%= 75 < 70 %>
+	<h3>JSP Built-In Objects:</h3>
+	
+	What is the browser the user is using: <%= request.getHeader("User-Agent") %>
+	<br/> <br/>
+	Host: <%= request.getHeader("Host") %>
+	<br/><br />
+	Language used in browser: <%= request.getLocale() %>
 	<jsp:include page="myFooter.jsp" />
 </body>
 </html>

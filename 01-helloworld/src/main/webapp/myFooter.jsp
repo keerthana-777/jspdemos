@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="myheader.html" />
-	<h3>Hello World !!</h3>
-	The time on the server is <%= new java.util.Date() %>
-	<jsp:include page="myFooter.jsp" />
+	<p>
+		<hr>
+		Last update: <%= new java.util.Date() %>
+	</p>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="myheader.html" />
 	<%!
 		String xyz;
 	
@@ -17,6 +18,6 @@
 	%>
 	
 	Lower case "Hello World !! = " <%= makeItLower("HELLO WORLD") %> 
-	
+	<jsp:include page="myFooter.jsp" />
 </body>
 </html>
