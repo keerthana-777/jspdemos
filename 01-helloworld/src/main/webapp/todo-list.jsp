@@ -16,21 +16,24 @@
 	</form>
 
 	<%
-		List<String> items = (List<String>) session.getAttribute("mytodolist"); 
+		List<String> items = (List<String>) session.getAttribute("mytodolist1"); 
 		if (items == null) {
 			items = new ArrayList<String>();
-			session.setAttribute("mytodolist", items);
+			session.setAttribute("mytodolist1", items);
 		}
-		items.add(request.getParameter("item"));	
+		String item = request.getParameter("item");
+		boolean isItemNotEmpty = item != null && item.trim().length() > 0;
+		boolean isItemNotDuplicate = isItemNotEmpty && !items.contains(item.trim());
+		if (isItemNotEmpty && isItemNotDuplicate)
+			items.add(item);	
 	%>
-
 
 	<hr>
 	<b>Shopping Cart</b> <br/>	
 	<ol>
 		<%
-			for (String item: items) {
-				out.println("<li>" + item + "</li>");
+			for (String temp: items) {
+				out.println("<li>" + temp + "</li>");
 			}
 		%>
 	</ol>
