@@ -20,7 +20,7 @@
 				}
 			}
 		}
-	%>
+	%>	
 
 	<p>Your favourite programming language is <strong><%= favLang %></strong> </p>
 	

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%
-		String favlang = request.getParameter("favouriteLanguage");
+		String favlang = request.getParameter("favouriteLanguage");		
 		Cookie mycookie = new Cookie("trainingportal.favouriteLanguage", favlang);
 		mycookie.setMaxAge(60*60);
 		response.addCookie(mycookie);
