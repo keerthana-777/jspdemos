@@ -7,11 +7,11 @@
 
 <%
 	List<Student> data = new ArrayList<Student>();
-	data.add(new Student("John", "Doe"));
-	data.add(new Student("Max", "William"));
-	data.add(new Student("John", "Wilson"));
-	data.add(new Student("Dexter", "Mathews"));
-	data.add(new Student("Jane", "McDonell"));
+	data.add(new Student("John", "Doe", false));
+	data.add(new Student("Max", "William", true));
+	data.add(new Student("John", "Wilson", false));
+	data.add(new Student("Dexter", "Mathews", true));
+	data.add(new Student("Jane", "McDonell", false));
 	pageContext.setAttribute("mystudents", data);
 %>
 
@@ -27,11 +27,20 @@
 		<tr>
 			<th>FirstName</th>
 			<th>LastName</th>
+			<th>RankHolder</th>
 		</tr>
 		<c:forEach var="student" items="${mystudents}">
 			<tr>
 				<td>${student.firstName}</td> 
-				<td>${student.lastName}</td>
+				<td>${student.lastName}</td>				
+				<td>
+					<c:if test="${student.rankHolder}">
+						Receive Award
+					</c:if>
+					<c:if test="${not student.rankHolder}">
+						-
+					</c:if>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

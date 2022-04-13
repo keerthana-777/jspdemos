@@ -17,7 +17,7 @@
 	<!-- 
 		Date myNewDate = new java.util.Date();
 	 -->
-	<c:set var="myNewDate" value="<%= new java.util.Date() %>" />
+	<c:set var = "myNewDate" value="<%= new java.util.Date() %>" />
 	
 	New Time on the server is: ${myNewDate} 
 	

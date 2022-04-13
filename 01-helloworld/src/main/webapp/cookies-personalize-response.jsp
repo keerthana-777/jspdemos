@@ -9,13 +9,13 @@
 <body>
 	<%
 		String favlang = request.getParameter("favouriteLanguage");		
-		Cookie mycookie = new Cookie("trainingportal.favouriteLanguage", favlang);
+		Cookie mycookie = new Cookie("trainingPortalFavouriteLanguage", favlang);		
 		mycookie.setMaxAge(60*60);
 		response.addCookie(mycookie);
 	%>
 
 	Thanks!! we set your favourite language to: ${param.favouriteLanguage }
 	<br /><br />
-	<a href="cookies-main.jsp">Return to Training Portal.</a>
+	<a href="tagcookies-main-with-jstl.jsp">Return to Training Portal.</a>
 </body>
 </html>
